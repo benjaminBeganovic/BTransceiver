@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.asd.btransceiver" >
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConnectActivity"
+            android:label="Connection"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.asd.btransceiver.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asd.btransceiver.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".MessageActivity"
+            android:label="Messages"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName="com.example.asd.btransceiver.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asd.btransceiver.MainActivity" />
+        </activity>
+
+        <activity
+        android:name=".ConfigurationActivity"
+        android:label="Bands"
+            android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        android:parentActivityName="com.example.asd.btransceiver.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.asd.btransceiver.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".FrequencyActivity"
+            android:label="VFO"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:parentActivityName="com.example.asd.btransceiver.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asd.btransceiver.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MorseSpeedActivity"
+            android:label="Morse speed"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:parentActivityName="com.example.asd.btransceiver.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asd.btransceiver.MainActivity" />
+        </activity>
+
+        <service android:name=".BTService" />
+    </application>
+
+</manifest>

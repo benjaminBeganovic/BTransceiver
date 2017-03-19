@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="false"
+    android:id="@+id/scrollV">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refresh"
+            android:id="@+id/loadConfig"
+            android:layout_centerHorizontal="true"
+            android:onClick="loadConfigF"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Current frequency:"
+            android:id="@+id/currentFTexView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/loadConfig" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="80m 300.000.000Hz A"
+            android:background="#D6F5FF"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/currentFTexView"
+            android:layout_toLeftOf="@+id/changeVFO"
+            android:enabled="false"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set VFOB"
+            android:id="@+id/changeVFO"
+            android:layout_below="@+id/currentFTexView"
+            android:layout_alignRight="@+id/loadConfig"
+            android:layout_alignEnd="@+id/loadConfig"
+            android:onClick="setVFOABF"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set new frequency:"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/newFrequency"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/editText2"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET"
+            android:id="@+id/buttonSetF"
+            android:layout_alignTop="@+id/newFrequency"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="setNewF"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:layout_below="@+id/textView2"
+            android:text="Hz xx-m"
+            android:layout_toLeftOf="@+id/buttonSetF"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Choose a saved frequency:"
+            android:id="@+id/textViewSavedF"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/newFrequency"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/editTextMemory"
+            android:layout_centerHorizontal="true"
+            android:text="M0"
+            android:layout_below="@+id/textViewSavedF"
+            android:textColor="#000000"
+            android:enabled="false"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:id="@+id/buttonMleft"
+            android:layout_below="@+id/textViewSavedF"
+            android:layout_toLeftOf="@+id/editTextMemory"
+            android:layout_toStartOf="@+id/editTextMemory"
+            android:layout_marginRight="10dp"
+            android:onClick="leftButton"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=">"
+            android:id="@+id/buttonMright"
+            android:layout_below="@+id/textViewSavedF"
+            android:layout_toRightOf="@+id/editTextMemory"
+            android:layout_toEndOf="@+id/editTextMemory"
+            android:layout_marginLeft="10dp"
+            android:onClick="rightButton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Set as current"
+            android:id="@+id/buttonSetFromM"
+            android:layout_below="@+id/buttonMleft"
+            android:layout_centerHorizontal="true"
+            android:onClick="setMemAsCurrentF"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set new value:"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/buttonSetFromM"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/editText3"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/editText5"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set"
+            android:id="@+id/buttonVFOAB"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="setInMemF"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText5"
+            android:text="Hz xx-m"
+            android:layout_alignTop="@+id/buttonVFOAB"
+            android:layout_toLeftOf="@+id/buttonVFOAB"
+            android:layout_toStartOf="@+id/buttonVFOAB"
+            android:enabled="false"
+            android:textColor="#000000"/>
+
+
+
+    </RelativeLayout>
+</ScrollView>
